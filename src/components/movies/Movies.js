@@ -3,16 +3,19 @@ import queryString from 'query-string';
 import { useLocation } from 'react-router-dom';
 import MovieCard from '../movie-card/MovieCard';
 import NoResults from '../no-results/NoResults';
-import { MoviesContext } from '../../appContext';
+import { MoviesContext, NomineesContext } from '../../appContext';
+import Banner from '../banner/Banner';
 import Spinner from '../spinner/Spinner';
 import './movies.css';
 const Movies = ({ history }) => {
   const location = useLocation();
   const { q = '' } = queryString.parse(location.search);
+  localStorage.setItem('query', q);
 
   const [searchValue, setSearchValue] = useState(q);
   const [isLoading, setIsLoading] = useState(false);
   const { movies, dispatchMovies } = useContext(MoviesContext);
+  const { nominees } = useContext(NomineesContext);
 
   useEffect(() => {
     if (searchValue.length > 2) {
@@ -73,6 +76,8 @@ const Movies = ({ history }) => {
           autoComplete='off'
         />
       </label>
+
+      {nominees.length === 5 && <Banner />}
 
       {isLoading ? (
         <Spinner />
