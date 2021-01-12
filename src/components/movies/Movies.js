@@ -22,7 +22,7 @@ const Movies = ({ history }) => {
         try {
           setIsLoading(true);
           const results = await fetch(
-            `http://www.omdbapi.com/?s=${searchValue}&apikey=a811f389`
+            `https://www.omdbapi.com/?s=${searchValue}&apikey=a811f389`
           );
           const resultsJson = await results.json();
           if (resultsJson.Response !== 'False') {
