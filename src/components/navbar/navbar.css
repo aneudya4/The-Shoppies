@@ -7,23 +7,31 @@ nav {
   max-width: 1400px;
   margin: 0 auto;
   padding: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+nav h1 {
+  color: black;
 }
 
 nav ul {
   display: flex;
 }
-
-nav ul li:first-of-type {
-  font-size: 20px;
-  font-weight: bold;
-}
-
-nav ul li:nth-child(2) {
-  margin-left: auto;
+nav ul li:nth-child(1) {
   margin-right: 20px;
 }
 
 nav ul li a.selected {
   border-bottom: 1px solid rgba(247, 179, 78, 0.959);
   padding: 0 0 5px 0;
+}
+
+@media all and (min-width: 700px) {
+  nav {
+    flex-direction: row;
+  }
+  nav ul {
+    margin-left: auto;
+  }
 }

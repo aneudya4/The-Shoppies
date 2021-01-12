@@ -8,10 +8,8 @@ const NavBar = () => {
   return (
     <header>
       <nav>
+        <h1>The Shoppies</h1>
         <ul>
-          <li>
-            <NavLink to='/'>The Shoppies</NavLink>
-          </li>
           <li>
             <NavLink to={formatQuery}>Search Movies</NavLink>
           </li>

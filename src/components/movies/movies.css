@@ -25,6 +25,12 @@ label i {
 }
 input {
   margin: 0 auto;
-  width: 420px;
+  width: 300;
   padding: 7px 10px 7px 20px;
+}
+
+@media all and (min-width: 500px) {
+  input {
+    width: 420px;
+  }
 }

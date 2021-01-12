@@ -12,10 +12,16 @@
 
 .no-results .img-container {
   text-align: center;
-  width: 500px;
+  width: 300;
   margin: 25px 0;
 }
 .no-results .img-container img {
   width: 100%;
   margin: 0 auto;
+}
+
+@media all and (min-width: 500px) {
+  .no-results .img-container {
+    width: 500px;
+  }
 }

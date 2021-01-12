@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import MovieCard from '../movie-card/MovieCard';
 import { NomineesContext } from '../../appContext';
+import './nominees.css';
 
 const Nominees = () => {
   const { nominees, dispatchNominees } = useContext(NomineesContext);
