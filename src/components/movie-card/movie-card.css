@@ -1,0 +1,75 @@
+.movie-card {
+  position: relative;
+  width: 250px;
+  height: 350px;
+  padding: 20px;
+  margin: 100px auto 0 auto;
+  color: white;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.movie-card button {
+  margin-top: 5px;
+  border: 0;
+  border-radius: 3px;
+  padding: 5px 15px;
+  cursor: pointer;
+  outline: none;
+  color: white;
+}
+.movie-card button.add-btn {
+  background: rgb(78, 143, 78);
+}
+.movie-card button.add-btn:hover {
+  background: rgb(61, 116, 61);
+}
+
+button.remove-btn {
+  background-color: tomato;
+  color: white;
+}
+button.remove-btn:hover {
+  background-color: rgb(228, 54, 24);
+}
+
+.movie-card:hover {
+  transform: scale(1.1);
+  transition: all ease-in 0.3s;
+}
+
+.movie-card a {
+  color: inherit;
+}
+.movie-card .movie-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+.movie-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.movie-info {
+  margin-top: 7px;
+  color: inherit;
+}
+.movie-info p.title {
+  font-weight: bolder;
+  font-size: 15px;
+}
+
+.year {
+  background: rgba(247, 179, 78, 0.959);
+  display: inline-block;
+  text-align: center;
+  padding: 5px 13px 7px 13px;
+  font-weight: bolder;
+  color: white;
+  border-radius: 10px;
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
