@@ -2,6 +2,8 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import MovieCard from '../movie-card/MovieCard';
 import { NomineesContext } from '../../appContext';
+import Banner from '../banner/Banner';
+
 import './nominees.css';
 
 const Nominees = () => {
@@ -13,6 +15,8 @@ const Nominees = () => {
   return (
     <section className='container'>
       <h2>Nominees</h2>
+
+      {nominees.length === 5 && <Banner />}
 
       {nominees.length === 0 ? (
         <div className='add-nominees-msg '>

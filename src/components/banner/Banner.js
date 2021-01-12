@@ -5,7 +5,7 @@ const Banner = () => {
     <div className='banner'>
       <p>
         <i className='fas fa-award' />
-        You already have 5 movies nominated
+        You have reached the max ammount of nominations per user.
       </p>
     </div>
   );
