@@ -33,6 +33,11 @@ button.remove-btn:hover {
   background-color: rgb(228, 54, 24);
 }
 
+button.add-btn:disabled {
+  background-color: gray;
+  pointer-events: none;
+}
+
 .movie-card:hover {
   transform: scale(1.1);
   transition: all ease-in 0.3s;

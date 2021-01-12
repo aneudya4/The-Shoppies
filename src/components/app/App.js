@@ -19,6 +19,16 @@ function App() {
     nomineesReducer,
     nomineesInitialState
   );
+
+  useEffect(() => {
+    const isNominees = localStorage.getItem('nominees');
+    if (isNominees) {
+      dispatchNominees({
+        type: 'ADD_NOMINEE_FROM_STORAGE',
+        payload: JSON.parse(isNominees),
+      });
+    }
+  }, []);
   return (
     <MoviesContext.Provider value={{ movies, dispatchMovies }}>
       <NomineesContext.Provider value={{ nominees, dispatchNominees }}>

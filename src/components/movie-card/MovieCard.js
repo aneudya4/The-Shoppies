@@ -19,7 +19,11 @@ const MovieCard = ({ movie }) => {
     );
     if (!isNominee) {
       return (
-        <button className='add-btn btn' onClick={handleAddNominee}>
+        <button
+          disabled={nominees.length >= 5}
+          className='add-btn btn'
+          onClick={handleAddNominee}
+        >
           Nominate
         </button>
       );

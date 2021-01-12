@@ -1,0 +1,21 @@
+.no-results {
+  color: white;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 25px;
+}
+
+.no-results p {
+  margin: 15px 0;
+  font-size: 17px;
+}
+
+.no-results .img-container {
+  text-align: center;
+  width: 500px;
+  margin: 25px 0;
+}
+.no-results .img-container img {
+  width: 100%;
+  margin: 0 auto;
+}

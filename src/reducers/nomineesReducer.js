@@ -3,8 +3,11 @@ const nomineesReducer = (state = [], action) => {
     case 'ADD_NOMINEE':
       const newState = [...state, action.payload];
       localStorage.setItem('nominees', JSON.stringify(newState));
-
       return newState;
+
+    case 'ADD_NOMINEE_FROM_STORAGE':
+      return action.payload;
+
     case 'REMOVE_NOMINEE':
       const filteredNomines = state.filter(
         (nominee) => nominee.imdbID !== action.payload

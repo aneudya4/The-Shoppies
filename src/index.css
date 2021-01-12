@@ -2,7 +2,30 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: 'Raleway', sans-serif;
+  scroll-behavior: smooth;
 }
 body {
   background-color: #282c34;
+}
+h1 {
+  margin: 25px 0;
+  color: white;
+  text-align: center;
+}
+h2 {
+  color: white;
+  font-size: 25px;
+  text-align: center;
+}
+
+li {
+  list-style: none;
+}
+
+a,
+a:visited,
+a:active {
+  text-decoration: none;
+  color: black;
 }

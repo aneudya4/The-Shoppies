@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import MovieCard from '../movie-card/MovieCard';
+import NoResults from '../no-results/NoResults';
 import { MoviesContext } from '../../appContext';
 import Spinner from '../spinner/Spinner';
 import './movies.css';
@@ -42,21 +43,33 @@ const Movies = () => {
     }
   }, [searchValue, dispatchMovies]);
 
+  const renderResults = () => {
+    return movies.searchedMovies.length > 0 ? (
+      movies.searchedMovies.map((movie) => (
+        <MovieCard key={movie.imdbID} movie={movie} />
+      ))
+    ) : (
+      <NoResults searchTerm={searchValue} />
+    );
+  };
   return (
-    <div className='search-movies'>
-      <input
-        value={searchValue}
-        onChange={(e) => setSearchValue(e.target.value)}
-      />
+    <div className='search-movies container'>
+      <label htmlFor='search'>
+        <i class='fas fa-search' />
+
+        <input
+          id='search'
+          value={searchValue}
+          onChange={(e) => setSearchValue(e.target.value)}
+          placeholder='Search'
+          autoComplete='off'
+        />
+      </label>
 
       {isLoading ? (
         <Spinner />
       ) : (
-        <div className='movies'>
-          {movies.searchedMovies.map((movie) => (
-            <MovieCard key={movie.imdbID} movie={movie} />
-          ))}
-        </div>
+        <div className='movies'>{renderResults()}</div>
       )}
     </div>
   );
