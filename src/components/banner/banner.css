@@ -2,3 +2,10 @@
   color: white;
   margin-top: 25px;
 }
+
+.banner i {
+  font-size: 35px;
+  color: gold;
+  display: inline-block;
+  margin: 0 10px;
+}

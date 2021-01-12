@@ -28,9 +28,13 @@ const Movies = ({ history }) => {
           );
           const resultsJson = await results.json();
           if (resultsJson.Response !== 'False') {
+            const filterResults = resultsJson.Search.filter(
+              (item) => item.Type === 'movie'
+            );
+
             dispatchMovies({
               type: 'SEARCH_MOVIES',
-              payload: resultsJson.Search,
+              payload: filterResults,
             });
           } else {
             setIsLoading(false);

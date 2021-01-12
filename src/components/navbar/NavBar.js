@@ -3,14 +3,17 @@ import { NavLink } from 'react-router-dom';
 import './navbar.css';
 const NavBar = () => {
   const query = localStorage.getItem('query');
+  const formatQuery = query === '' ? '/' : `/?q=${query}`;
 
   return (
     <header>
       <nav>
         <ul>
-          <li>The Shoppies</li>
           <li>
-            <NavLink to={`/?q=${query}`}>Search Movies</NavLink>
+            <NavLink to='/'>The Shoppies</NavLink>
+          </li>
+          <li>
+            <NavLink to={formatQuery}>Search Movies</NavLink>
           </li>
 
           <li>
