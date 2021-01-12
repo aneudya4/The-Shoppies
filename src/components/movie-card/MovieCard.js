@@ -34,10 +34,7 @@ const MovieCard = ({ movie }) => {
       </button>
     );
   };
-  const formatYear =
-    movie.Year[movie.Year.length - 1] === '–'
-      ? `${movie.Year}present`
-      : movie.Year;
+
   const setImg = movie.Poster === 'N/A' ? placeHolderImg : movie.Poster;
 
   return (
@@ -47,7 +44,7 @@ const MovieCard = ({ movie }) => {
       </div>
       <div className='movie-info'>
         <p className='title'>{movie.Title}</p>
-        <span className='year'>{formatYear}</span>
+        <span className='year'>{movie.Year}</span>
       </div>
       {renderButtons()}
     </div>
