@@ -14,7 +14,6 @@ const Movies = ({ history }) => {
   const [isLoading, setIsLoading] = useState(false);
   const { movies, dispatchMovies } = useContext(MoviesContext);
 
-  console.log(q);
   useEffect(() => {
     if (searchValue.length > 2) {
       // api wont return movies with search terms less than 2 chars
