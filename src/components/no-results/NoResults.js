@@ -4,7 +4,7 @@ import './no-results.css';
 const NoResults = ({ searchTerm }) => {
   const message = searchTerm
     ? `There is no results for ${searchTerm}`
-    : 'Type in the input box to begging search';
+    : 'Type in the input box to start your search';
   return (
     <div className='no-results'>
       {<p>{message}</p>}

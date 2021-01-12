@@ -1,15 +1,20 @@
 import React, { useState, useEffect, useContext } from 'react';
+import queryString from 'query-string';
+import { useLocation } from 'react-router-dom';
 import MovieCard from '../movie-card/MovieCard';
 import NoResults from '../no-results/NoResults';
 import { MoviesContext } from '../../appContext';
 import Spinner from '../spinner/Spinner';
 import './movies.css';
-const Movies = () => {
-  const [searchValue, setSearchValue] = useState('');
-  const [isLoading, setIsLoading] = useState(false);
+const Movies = ({ history }) => {
+  const location = useLocation();
+  const { q = '' } = queryString.parse(location.search);
 
+  const [searchValue, setSearchValue] = useState(q);
+  const [isLoading, setIsLoading] = useState(false);
   const { movies, dispatchMovies } = useContext(MoviesContext);
 
+  console.log(q);
   useEffect(() => {
     if (searchValue.length > 2) {
       // api wont return movies with search terms less than 2 chars
@@ -52,15 +57,19 @@ const Movies = () => {
       <NoResults searchTerm={searchValue} />
     );
   };
+  const handleSearch = (e) => {
+    setSearchValue(e.target.value);
+    history.push(`?q=${e.target.value}`);
+  };
   return (
     <div className='search-movies container'>
       <label htmlFor='search'>
-        <i class='fas fa-search' />
+        <i className='fas fa-search' />
 
         <input
           id='search'
           value={searchValue}
-          onChange={(e) => setSearchValue(e.target.value)}
+          onChange={handleSearch}
           placeholder='Search'
           autoComplete='off'
         />
