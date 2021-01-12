@@ -7,6 +7,7 @@ import { MoviesContext, NomineesContext } from '../../appContext';
 import Banner from '../banner/Banner';
 import Spinner from '../spinner/Spinner';
 import './movies.css';
+
 const Movies = ({ history }) => {
   const location = useLocation();
   const { q = '' } = queryString.parse(location.search);
