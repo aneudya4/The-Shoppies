@@ -1,10 +1,12 @@
 import React, { useState, useEffect, useContext } from 'react';
 import MovieCard from '../movie-card/MovieCard';
 import { MoviesContext } from '../../appContext';
-
+import Spinner from '../spinner/Spinner';
 import './movies.css';
 const Movies = () => {
   const [searchValue, setSearchValue] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+
   const { movies, dispatchMovies } = useContext(MoviesContext);
 
   useEffect(() => {
@@ -12,6 +14,7 @@ const Movies = () => {
       // api wont return movies with search terms less than 2 chars
       const fetchMovies = async () => {
         try {
+          setIsLoading(true);
           const results = await fetch(
             `http://www.omdbapi.com/?s=${searchValue}&apikey=a811f389`
           );
@@ -22,9 +25,14 @@ const Movies = () => {
               payload: resultsJson.Search,
             });
           } else {
+            setIsLoading(false);
+
             throw new Error();
           }
+          setIsLoading(false);
         } catch (error) {
+          setIsLoading(false);
+
           dispatchMovies({ type: 'SEARCH_MOVIES', payload: [] });
         }
       };
@@ -40,11 +48,16 @@ const Movies = () => {
         value={searchValue}
         onChange={(e) => setSearchValue(e.target.value)}
       />
-      <div className='movies'>
-        {movies.searchedMovies.map((movie) => (
-          <MovieCard key={movie.imdbID} movie={movie} />
-        ))}
-      </div>
+
+      {isLoading ? (
+        <Spinner />
+      ) : (
+        <div className='movies'>
+          {movies.searchedMovies.map((movie) => (
+            <MovieCard key={movie.imdbID} movie={movie} />
+          ))}
+        </div>
+      )}
     </div>
   );
 };

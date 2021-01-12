@@ -9,6 +9,7 @@ const MovieCard = ({ movie }) => {
   const handleAddNominee = () => {
     dispatchNominees({ type: 'ADD_NOMINEE', payload: movie });
   };
+
   const handleRemoveNominee = () => {
     dispatchNominees({ type: 'REMOVE_NOMINEE', payload: movie.imdbID });
   };
