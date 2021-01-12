@@ -76,7 +76,7 @@ const Movies = ({ history }) => {
           id='search'
           value={searchValue}
           onChange={handleSearch}
-          placeholder='Search'
+          placeholder='Movie title'
           autoComplete='off'
         />
       </label>
