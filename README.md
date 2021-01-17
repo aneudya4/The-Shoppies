@@ -1,70 +1,78 @@
-# Getting Started with Create React App
+<h1 align="center">
+The Shoppies: Movie awards for entrepreneurs</h1>
+<h2 align="center">
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+</h2>
 
-## Available Scripts
+<p align="center">
+  
+<img src="https://img.shields.io/badge/made%20by-aneudya4-blue.svg" >
 
-In the project directory, you can run:
+<img src="https://img.shields.io/badge/React-17.0.1-blue.svg">
 
-### `npm start`
+<img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat">
+</p>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<img src="./readme_assets/homepage.png" width="100%">
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<h2 align="center"><a  href="https://aneudy-shoppies-awards.netlify.app/">Live Demo</a></h2>
 
-### `npm test`
+### [Contributions are Welcome](https://github.com/aneudya4/The-Shoppies.git)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Description
 
-### `npm run build`
+<p align="center">
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The Shoppies: Movie awards for entrepreneurs
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Shopify has branched out into movie award shows and we need your help. Please build us an app to help manage our movie nominations for the upcoming Shoppies.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The Challenge
 
-### `npm run eject`
+We need a webpage that can search OMDB for movies, and allow the user to save their favourite films they feel should be up for nomination. When they've selected 5 nominees they should be notified they're finished.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+We'd like a simple to use interface that makes it easy to:
+Search OMDB and display the results (movies only)
+Add a movie from the search results to our nomination list
+View the list of films already nominated
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## How to nominate.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### The Shoppies: Movie awards for entrepreneurs:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- **START** Type in the input box to search for a movie you would like to nominate ( max 5 movies per user).
+- **Click Nominate** Click the nominate button under the movie card to nominate your movie
+- **Notification** When the user reaches 5 nominees will be notified and buttons for nomination will be disabled.
+- **Remove** Click the Remove button under the movie card
 
-## Learn More
+<p align="center"><img  src="./readme_assets/search.png" width="70%"></p>
+<p align="center"><img  src="./readme_assets/notification.png" width="70%"></p>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### See all nominees:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- **all Nominees** Click the Nominees section on the navigation bar.
+- **Remove all nominees** Click the Clear button on top of the nominees list.
+- **Remove** Click the Remove button under the movie card
+- **If there are not nominees** User will see a message with a link to the homepage.
 
-### Code Splitting
+<p align="center"><img  src="./readme_assets/nominees-list.png" width="70%"></p>
+<p align="center"><img  src="./readme_assets/empty-list.png" width="70%"></p>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Project setup:
 
-### Analyzing the Bundle Size
+```bash
+git clone https://github.com/aneudya4/The-Shoppies.git
+cd The-Shoppies
+npm install
+npm run start
+open http://localhost:3000
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## NOTE:
 
-### Making a Progressive Web App
+- **issue with fetching** You will need to create your own api key at https://www.omdbapi.com/
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Future scope:
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Adding Authentication
+- keep track of the most nominated movies
