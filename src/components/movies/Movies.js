@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import queryString from 'query-string';
+import config from '../../config';
 import { useLocation } from 'react-router-dom';
 import MovieCard from '../movie-card/MovieCard';
 import NoResults from '../no-results/NoResults';
@@ -25,7 +26,7 @@ const Movies = ({ history }) => {
         try {
           setIsLoading(true);
           const results = await fetch(
-            `https://www.omdbapi.com/?s=${searchValue}&apikey=a811f389`
+            `https://www.omdbapi.com/?s=${searchValue}&apikey=${config.API_KEY}`
           );
           const resultsJson = await results.json();
           if (resultsJson.Response !== 'False') {
