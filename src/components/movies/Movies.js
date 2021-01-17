@@ -69,6 +69,7 @@ const Movies = ({ history }) => {
     setSearchValue(e.target.value);
     history.push(`?q=${e.target.value}`);
   };
+  console.log(config.API_KEY);
   return (
     <div className='search-movies container'>
       <label htmlFor='search'>
