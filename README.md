@@ -68,10 +68,6 @@ npm run start
 open http://localhost:3000
 ```
 
-## NOTE:
-
-- **issue with fetching** You will need to create your own api key at https://www.omdbapi.com/
-
 ## Future scope:
 
 - Adding Authentication
