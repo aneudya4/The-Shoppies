@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
 import queryString from 'query-string';
-import config from '../../config';
 import { useLocation } from 'react-router-dom';
 import MovieCard from '../movie-card/MovieCard';
 import NoResults from '../no-results/NoResults';
@@ -69,7 +68,6 @@ const Movies = ({ history }) => {
     setSearchValue(e.target.value);
     history.push(`?q=${e.target.value}`);
   };
-  console.log(config.API_KEY);
   return (
     <div className='search-movies container'>
       <label htmlFor='search'>
